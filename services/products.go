@@ -4,6 +4,8 @@ import (
 	Models "savannah/models"
 )
 
+//CRUD for products
+
 func addProducts(item Models.Products) (Models.Products, error) {
 
 	result := db.Create(item)

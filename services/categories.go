@@ -1,6 +1,7 @@
 package services
 
 import (
+	DTOs "savannah/dtos"
 	Models "savannah/models"
 )
 
@@ -37,4 +38,28 @@ func getAllCategories() ([]Models.Categories, error) {
 	}
 
 	return categories, nil
+}
+
+func updateCategory(item DTOs.CategoryDTO) (status bool, err error) {
+
+	category, err := getCategoryById(item.ID)
+
+	if err != nil {
+		status = false
+		return status, err
+	}
+
+	category.Name = item.Name
+
+	result := db.Save(&category)
+
+	if result.Error != nil {
+		status = false
+		return status, result.Error
+	}
+
+	status = true
+
+	return status, nil
+
 }

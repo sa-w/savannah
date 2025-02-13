@@ -16,3 +16,4 @@ var customer Models.Customers
 var customers []Models.Customers
 var order Models.Orders
 var orders []Models.Orders
+var status bool
