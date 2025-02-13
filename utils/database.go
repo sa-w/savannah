@@ -5,6 +5,8 @@ import (
 	"gorm.io/gorm"
 )
 
+//Database utilities
+
 func ConnectDatabase() *gorm.DB {
 
 	dsn := "host=localhost user=gorm password=gorm dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai"
